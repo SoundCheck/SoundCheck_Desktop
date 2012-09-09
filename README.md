@@ -1,3 +1,5 @@
+![SoundCheck Logo][1]
+
 SoundCheck_Desktop
 ==================
 
@@ -29,3 +31,5 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
+[1]: https://raw.github.com/SoundCheck/SoundCheck_Desktop/master/MusicPlayer/src/main/resources/images/soundCheckLogoFull.jpg
