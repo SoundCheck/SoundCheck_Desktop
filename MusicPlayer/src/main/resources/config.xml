@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="LocalName">unitTest</entry>
+<entry key="EnabledMode">false</entry>
+<entry key="MaxOutgoingConnections">6</entry>
+</properties>

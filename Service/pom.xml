@@ -1,0 +1,79 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>soundcheck</groupId>
+		<artifactId>parent</artifactId>
+		<version>Beta</version>
+	</parent>
+
+	<artifactId>Service</artifactId>
+	<packaging>jar</packaging>
+
+	<name>SoundCheck Windows Service</name>
+	<url>https://github.com/SoundCheck</url>
+
+	<dependencies>
+		<dependency>
+			<groupId>soundcheck</groupId>
+			<artifactId>GlobalLibraries</artifactId>
+			<version>Beta</version>
+		</dependency>
+		<dependency>
+			<groupId>soundcheck</groupId>
+			<artifactId>MusicPlayer</artifactId>
+			<version>Beta</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.2.1</version>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<archive>
+						<manifest>
+							<mainClass>soundcheck.service.MasterController</mainClass>
+						</manifest>
+					</archive>
+					<appendAssemblyId>false</appendAssemblyId>
+					<finalName>${project.groupId}-${project.version}-${changeSet}</finalName>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>buildnumber-maven-plugin</artifactId>
+			</plugin>
+
+		</plugins>
+		<!-- Cheat to remove unused jar file -->
+		<finalName>${project.groupId}-${project.version}-${changeSet}</finalName>
+	</build>
+
+</project>
